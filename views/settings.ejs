@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="./settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Settings</h2>
+            <ul>
+                <li>Profile</li>
+                <li>Notifications</li>
+                <li>Privacy</li>
+                <li>Account</li>
+                <li>Help</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Settings</h1>
+
+            </div>
+
+            <div class="content-box1">
+                <div class="wrapper">
+                    <div class="profile">
+                        <img src="./assets/images/profile_image.jpeg" alt="Profile">
+                        <!-- <span>Username</span> -->
+                        <div class="content">
+                            <h5>Kavya Kankonkar</h5>
+                            <br>
+                            <button><b>Edit Image</b></button>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <div class="prof-setting">
+                    <h2>Profile Settings</h2>
+                    <div class="setting-item">
+                        <label for="username"><b>Username:</b></label>
+                        <p><%= username || "Guest"%></p>
+                        <!-- <input type="text" id="username" placeholder="Enter username"> -->
+                    </div>
+                    <div class="setting-item">
+                        <label for="password"><b>Password:</b></label>
+                        <p><%= password || "Empty"%></p>
+                        <!-- <input type="email" id="email" placeholder="Enter email"> -->
+                    </div>
+                    <button class="button">Save Changes</button>
+                </div>
+
+            </div>
+
+            <div class="content-box">
+                <h2>Notification Preferences</h2>
+                <div class="setting-item">
+                    <label for="email-notifications">Email Notifications:</label>
+                    <input type="checkbox" id="email-notifications">
+                </div>
+                <div class="setting-item">
+                    <label for="sms-notifications">SMS Notifications:</label>
+                    <input type="checkbox" id="sms-notifications">
+                </div>
+            </div>
+
+            <div class="Score">
+                <h5>Your score</h5>
+                <div class="score-img">
+                    <img src="./assets/images/score_coin.png">
+                    <input type="text" placeholder="How can I increase my points?">
+                </div>
+                <p><b>Recent transactions</b></p>
+                <div class="score-content">
+
+                    <p>
+                        Completed a task "Dashboard Design" </p>
+                    <div class="coin-1"><img class="coin-1" src="./assets/images/score_coin.png">
+                        <p> 20</p>
+                    </div>
+
+                    <p> Completed a task "Profile"</p>
+                    <div class="coin-2"><img class="coin-2" src="./assets/images/score_coin.png">
+                        <p> 20</p>
+                    </div>
+                    <p> Completed a task "Avatar"</p>
+                    <div class="coin-3"><img class="coin-3" src="./assets/images/score_coin.png">
+                        <p> 20</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="trophies-section">
+                <h2>Trophies</h2>
+                <div class="trophy-card">
+                    <img src="./assets/images/duck.png" alt="Duck Icon">
+                    <div class="trophy-title">Kudo Lover</div>
+                    <div class="trophy-description">You sent 10 kudos</div>
+                    <div class="kudos-details">
+                        <span><span class="lightning-icon">⚡</span>1</span>
+                        <span><span class="coin-icon"><i class="fa-brands fa-bitcoin"
+                                    style="color:yellow"></i></span>2</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="energy-card">
+                <h2>Energy</h2>
+                <div class="energy-value">
+                    <span class="lightning-icon">⚡</span>10
+                </div>
+                <div class="energy-description">
+                    Use your energy to give kudos to others!
+                </div>
+                <button class="browse-button">Browse people</button>
+            </div>
+
+            <div class="card">
+    <div class="card__container">
+
+        <article class="card__article">
+            <div class="card__data">
+                <img src="./assets/images/img3.png" alt="card image" class="card__img">
+
+                <h1 class="card__title">Chatbox</h1>
+                <p class="card__description">Chat and connect with your friends</p>
+            </div>
+
+            <div class="card__shapes">
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+                <span class="card__shape"></span>
+            </div>
+        </article>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+    </div>
+</body>
+
+</html>

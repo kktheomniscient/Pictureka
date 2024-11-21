@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const missionWord = document.querySelector(".word");
     const frontFaces = document.querySelectorAll(".front-face img");
     const backFaces = document.querySelectorAll(".back-face img");
+    const settings = document.querySelector(".settings");
 
     let countdown = 30;
     let hirenScoreCount = 0;
@@ -130,6 +131,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 showAlert("Wrong Answer!", false);
             }
         });
+    });
+
+    settings.addEventListener('click', () => {
+        window.location.href = '/settings';
     });
 
     startButton.addEventListener("click", () => {

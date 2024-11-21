@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 
+let currentUser = {};
+
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
@@ -21,8 +23,33 @@ app.get("/signup", (req, res) => {
     res.render("signup");
 });
 
+app.get("/home", (req, res) => {
+    res.render("home");
+});
+
+app.get("/dashboard", (req, res) => {
+    if (currentUser.username && currentUser.password) {
+        res.render("dashboard");
+    } else {
+        res.redirect("/"); // Redirect to login if user details are missing
+    }
+});
+
 app.get("/gamepage", (req, res) => {
+    if (currentUser.username) {
+        res.render("gamepage", { username: currentUser.username });
+    } else {
+        res.redirect("/"); // Redirect to login if user details are missing
+    }
     res.render("gamepage");
+});
+
+app.get("/settings", (req, res) => {
+    if (currentUser.username && currentUser.password) {
+        res.render("settings", { username: currentUser.username, password: currentUser.password });
+    } else {
+        res.redirect("/"); // Redirect to login if user details are missing
+    }
 });
 
 // async function insert() {
@@ -72,8 +99,9 @@ app.post("/login", async (req, res) => {
             res.send("wrong Password");
         }
         else {
-            let username = req.body.username;
-            res.render("gamepage", {username});
+            currentUser.username = req.body.username; // Save user details
+            currentUser.password = req.body.password;
+            res.render("dashboard");
         }
     }
     catch {
