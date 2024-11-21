@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set("view engine", "ejs");
 
-app.use(express.static("public"));
+app.use(express.static("models"));
 
 app.get("/", (req, res) => {
     res.render("login");
@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
 
 app.get("/signup", (req, res) => {
     res.render("signup");
+});
+
+app.get("/gamepage", (req, res) => {
+    res.render("gamepage");
 });
 
 // async function insert() {
@@ -68,7 +72,8 @@ app.post("/login", async (req, res) => {
             res.send("wrong Password");
         }
         else {
-            res.render("home");
+            let username = req.body.username;
+            res.render("gamepage", {username});
         }
     }
     catch {

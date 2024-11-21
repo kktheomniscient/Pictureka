@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --pink : #F0C1E1;
+    --blue : #66d0eb;
+    --green: #A1EEBD;
+    --yellow: #F6F7C4;
+    --purple: #CB9DF0;
+    --dark-purple: #420078;
+    --red: #FF0000;
+    --dark-green: #00FF00;
+}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", serif;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url("./assets/images/backgroundimg.png");
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    z-index: 9; /* Ensure it is behind the alert box */
+    transition: background-color 0.5s ease; /* Smooth fade-out */
+}
+
+.overlay.hidden {
+    background-color: transparent; /* Make overlay invisible */
+    pointer-events: none; /* Allow interaction with content below */
+}
+
+.alert {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure it is above the overlay */
+    background-color: var(--red);
+    color: white;
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: transform 1s ease, opacity 1s ease; /* Smooth transform and fade */
+}
+
+.alert.hidden {
+    transform: translate(-50%, -350%); /* Move upwards */
+    opacity: 0; /* Fade out */
+}
+
+.alert img {
+    width: 200px;
+    filter: drop-shadow(0 0 0.75rem white);
+}
+
+.alert p {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 63%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 500px;
+    border-radius: 1rem;
+    background-color: black;
+}
+
+.start-btn {
+    background-color: white;
+    border: none;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.room-name {
+    display: inline;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--red);
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 7%;
+    border-radius: 1rem;
+}
+
+.timer {
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   top: 20%;
+}
+
+.countdown {
+    background-color: var(--blue);
+    color: black;
+    display: inline;
+    font-size: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.cards {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 75%;
+    display: flex;
+    gap: 2rem;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-container {
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1rem;;
+}
+
+.card:hover .card-container {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    background: url("./assets/images/background.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 10px solid white;
+}
+
+.container-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 0 0;
+    padding: 20px;
+}
+
+.front-face {
+    transform: rotateY(0deg);
+}
+
+.front-face img {
+    width: 200px;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+.back-face {
+    display: flex;
+    transform: rotateY(180deg);
+}
+
+.back-face img {
+    width: 200px;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+.question {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   top: 37%;
+   padding: 1rem 2rem;
+   border-radius: 1rem;
+   border: 2px solid white;
+}
+
+.question p {
+   font-size: 1.5rem;
+}
+
+.question h3 {
+    display: inline;
+    font-size: 2rem;
+}
+
+.settings {
+    position: absolute;
+    right: 2%;
+    top: 4%;
+
+}
+
+.settings-btn {
+    width: 70px;
+    height: 70px;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: none;
+    background: var(--blue);
+}
+
+.score-board {
+    width: 280px;
+    position: absolute;
+    left: 0.5%;
+    top: 3%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 5;
+    border-radius: 1rem;
+}
+
+.score-cards {
+    padding: 1rem;
+    background-color: var(--red);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.score-board h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.score {
+    display: flex;
+    color: var(--red);
+    width: 200px;
+    background: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.score p {
+    font-weight: 600;
+}

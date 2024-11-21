@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Figtree", sans-serif;
+}
+
+.container {
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container-box-left {
+    height: 80vh;
+    width: 40vw;
+    background: url("./assets/images/background.png");
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    position: relative;
+}
+
+.container-box-left img {
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.container-box-right {
+    height: 80vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8f7ff;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.container-box-right .details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.container-box-right h1 {
+    color: #252e33;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.container-box-right .details-container input {
+    width: 90%;
+    font-family: inherit;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.container-box-right button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    background-color: #ab3334;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container-box-right button:hover {
+    background-color: #cc4141;
+}
+
+.container-box-right button:active {
+    transform: scale(0.9);
+}
+
+.container-box-right a {
+    font-family: inherit;
+    display: block;
+    text-decoration: none;
+    color: #47889a;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
