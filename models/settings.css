@@ -562,3 +562,9 @@ grid-template-columns: repeat(3, 328px);
 column-gap: 2rem;
 }
 }
+
+a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Inherits text color from parent */
+  cursor: default;       /* Optional: change cursor to something other than the pointer */
+}
